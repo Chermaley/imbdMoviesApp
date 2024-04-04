@@ -3,22 +3,24 @@ import {moviesService} from '../api/moviesService';
 import {MovieType} from '../api/models/Movie';
 
 export interface MoviesSlice {
-  movies?: MovieType[];
-  moviesLoading?: boolean;
+  movies: MovieType[];
+  moviesLoading: boolean;
+  error?: string;
 }
 
 const initialState: MoviesSlice = {
   movies: [],
   moviesLoading: false,
+  error: '',
 };
 
 export const getMovies = createAsyncThunk(
   'getMovies',
-  ({search}: {search: string}) => {
+  ({search}: {search: string}, {rejectWithValue}) => {
     try {
       return moviesService.getMovies(search);
     } catch (e) {
-      console.log(e);
+      rejectWithValue(e);
     }
   },
 );
@@ -33,13 +35,15 @@ export const moviesSlice = createSlice({
         if (payload) {
           state.movies = payload;
           state.moviesLoading = false;
+          state.error = '';
         }
       })
       .addCase(getMovies.pending, state => {
         state.moviesLoading = true;
       })
-      .addCase(getMovies.rejected, state => {
+      .addCase(getMovies.rejected, (state, action) => {
         state.moviesLoading = false;
+        state.error = action.error.message;
       });
   },
 });

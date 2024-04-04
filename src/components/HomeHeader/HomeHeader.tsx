@@ -1,6 +1,5 @@
 import React, {useRef, useState} from 'react';
 import {Keyboard, Text, TextInput, TouchableOpacity, View} from 'react-native';
-import SearchInput from '../../ui/SearchInput/SearchInput.tsx';
 import SearchIcon from '../../icons/Search.tsx';
 import CloseIcon from '../../icons/Close.tsx';
 import styles from './styles.ts';
@@ -32,34 +31,31 @@ const HomeHeader = ({search, onSearchChange}: HomeHeaderProps) => {
 
   return (
     <View style={styles.wrapper}>
-      {isSearching ? (
-        <View style={styles.searchRow}>
-          <SearchInput
-            ref={searchInputRef}
-            value={search}
-            onChangeText={onSearchChange}
-            placeholderTextColor="rgba(242, 241, 243, 0.5)"
-            onBlur={submitEditingHandler}
-            onSubmitEditing={submitEditingHandler}
-            style={styles.searchInput}
-            placeholder="Search"
-            keyboardAppearance="dark"
-            returnKeyType="search"
-          />
-          <TouchableOpacity
-            onPress={pressCloseSearchIconHandler}
-            hitSlop={{top: 24, left: 24, right: 24, bottom: 24}}>
-            <CloseIcon width={24} height={24} color={colors.white} />
-          </TouchableOpacity>
-        </View>
-      ) : (
-        <View style={styles.headerRow}>
-          <Text style={styles.headerTitle}>Movies</Text>
-          <TouchableOpacity onPress={pressSearchIconHandler}>
-            <SearchIcon color="white" />
-          </TouchableOpacity>
-        </View>
-      )}
+      <View style={[styles.searchRow, !isSearching && styles.hiddenClass]}>
+        <TextInput
+          ref={searchInputRef}
+          value={search}
+          onChangeText={onSearchChange}
+          placeholderTextColor="rgba(242, 241, 243, 0.5)"
+          onBlur={submitEditingHandler}
+          onSubmitEditing={submitEditingHandler}
+          style={styles.searchInput}
+          placeholder="Search"
+          keyboardAppearance="dark"
+          returnKeyType="search"
+        />
+        <TouchableOpacity
+          onPress={pressCloseSearchIconHandler}
+          hitSlop={{top: 24, left: 24, right: 24, bottom: 24}}>
+          <CloseIcon width={24} height={24} color={colors.white} />
+        </TouchableOpacity>
+      </View>
+      <View style={[styles.headerRow, isSearching && styles.hiddenClass]}>
+        <Text style={styles.headerTitle}>Movies</Text>
+        <TouchableOpacity onPress={pressSearchIconHandler}>
+          <SearchIcon color="white" />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };

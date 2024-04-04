@@ -2,9 +2,14 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   card: {
-    flex: 1,
+    flexBasis: '48%',
     height: 200,
     borderRadius: 10,
+  },
+  loader: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   gradient: {
     position: 'absolute',
@@ -27,6 +32,7 @@ export default StyleSheet.create({
     bottom: 10,
     left: 10,
     zIndex: 2,
+    maxWidth: '80%',
   },
   cardRating: {
     fontSize: 16,

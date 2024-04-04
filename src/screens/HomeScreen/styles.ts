@@ -6,4 +6,14 @@ export default StyleSheet.create({
     backgroundColor: colors.bgSecondary,
     flex: 1,
   },
+  center: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
+  },
+  errorText: {
+    fontSize: 20,
+    textAlign: 'center',
+    fontWeight: 'bold',
+  }
 });

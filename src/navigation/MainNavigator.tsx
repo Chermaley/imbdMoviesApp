@@ -19,6 +19,8 @@ export default function MainNavigator() {
           headerTitleStyle: {
             fontWeight: 'bold',
           },
+          presentation: 'card',
+          animation: 'slide_from_right',
         }}>
         <Stack.Screen
           name={HOME}

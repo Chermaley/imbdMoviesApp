@@ -4,13 +4,15 @@ import {MovieType} from '../../api/models/Movie.ts';
 import {ListRenderItemInfo} from '@react-native/virtualized-lists/Lists/VirtualizedList';
 import MovieCard from '../../ui/MovieCard';
 import styles from './styles';
+import MovieSkeleton from "./MovieSkeleton.tsx";
 
 interface MovieListProps {
   movies: MovieType[];
+  loading: boolean;
   onGoToDetails: (movie: MovieType) => void;
 }
 
-const MovieList = ({movies, onGoToDetails}: MovieListProps) => {
+const MovieList = ({movies, loading, onGoToDetails}: MovieListProps) => {
   const renderItem = useCallback(
     ({item}: ListRenderItemInfo<MovieType>) => (
       <MovieCard
@@ -21,6 +23,8 @@ const MovieList = ({movies, onGoToDetails}: MovieListProps) => {
     ),
     [onGoToDetails],
   );
+
+  if (loading) return <MovieSkeleton />
 
   return (
     <FlatList
