@@ -1,11 +1,5 @@
 import React, {useState} from 'react';
-import {
-  ActivityIndicator,
-  Image,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {ActivityIndicator, Image, Text, TouchableOpacity, View,} from 'react-native';
 import styles from './styles';
 import LinearGradient from 'react-native-linear-gradient';
 import {colors} from '../../colors';
@@ -25,7 +19,7 @@ const MovieCard: React.FC<MovieCardProps> = ({title, image, onPress}) => {
       onPress={onPress}
       activeOpacity={0.95}>
       <LinearGradient
-        colors={['transparent', 'black']}
+        colors={['transparent','transparent','transparent', 'black']}
         style={styles.gradient}
       />
       {image && (

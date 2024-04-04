@@ -1,7 +1,6 @@
-import {HOME, MOVIES_DETAIL} from './routes.ts';
-import {MovieType} from '../api/models/Movie.ts';
+import {HOME, MOVIES_DETAIL} from './routes';
 
 export type MainNavigatorParamList = {
   [HOME]: undefined;
-  [MOVIES_DETAIL]: {movie: MovieType};
+  [MOVIES_DETAIL]: {imbdId: string};
 };

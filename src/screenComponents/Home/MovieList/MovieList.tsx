@@ -1,30 +1,32 @@
 import React, {useCallback} from 'react';
 import {FlatList} from 'react-native';
-import {MovieType} from '../../api/models/Movie.ts';
 import {ListRenderItemInfo} from '@react-native/virtualized-lists/Lists/VirtualizedList';
-import MovieCard from '../../ui/MovieCard';
+import MovieSkeleton from './MovieSkeleton';
+import {MovieListItemType} from "../../../api/models/MovieListItemType.ts";
+import MovieCard from "../../../ui/MovieCard";
 import styles from './styles';
-import MovieSkeleton from "./MovieSkeleton.tsx";
 
 interface MovieListProps {
-  movies: MovieType[];
+  movies: MovieListItemType[];
   loading: boolean;
-  onGoToDetails: (movie: MovieType) => void;
+  onGoToDetails: (imbdId: string) => void;
 }
 
 const MovieList = ({movies, loading, onGoToDetails}: MovieListProps) => {
   const renderItem = useCallback(
-    ({item}: ListRenderItemInfo<MovieType>) => (
+    ({item}: ListRenderItemInfo<MovieListItemType>) => (
       <MovieCard
         title={item.title}
         image={item.imgPoster}
-        onPress={() => onGoToDetails(item)}
+        onPress={() => onGoToDetails(item.imdbId)}
       />
     ),
     [onGoToDetails],
   );
 
-  if (loading) return <MovieSkeleton />
+  if (loading) {
+    return <MovieSkeleton />;
+  }
 
   return (
     <FlatList

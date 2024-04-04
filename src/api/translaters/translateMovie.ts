@@ -1,16 +1,13 @@
-import {ApiMovieType} from '../raw/ApiMovie.ts';
-import {MovieType} from '../models/Movie';
+import {ApiMovieType} from '../raw/ApiMovieType.ts';
+import {MovieType} from '../models/MovieType.ts';
 
 export default (_: ApiMovieType): MovieType => ({
-  aka: _['#AKA'],
-  actors: _['#ACTORS'],
-  imdbId: _['#IMDB_ID'],
-  imdbIv: _['#IMDB_IV'],
-  imdbUrl: _['#IMDB_URL'],
-  imgPoster: _['#IMG_POSTER'],
-  photoHeight: _.photo_height,
-  rank: _['#RANK'],
-  photoWidth: _.photo_width,
-  title: _['#TITLE'],
-  year: _['#YEAR'],
+  title: _.fake['#TITLE'],
+  imdbId: _.fake['#IMDB_ID'],
+  description: _.short.description,
+  genres: _.short.genre.join(', '),
+  posterImage: _.fake['#IMG_POSTER'],
+  actors: _.short.actor.map(actor => actor.name),
+  aggregateRating: _.short.aggregateRating.ratingValue,
+  keywords: _.short.keywords,
 });

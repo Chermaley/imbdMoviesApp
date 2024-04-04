@@ -1,9 +1,9 @@
 import React, {useRef, useState} from 'react';
 import {Keyboard, Text, TextInput, TouchableOpacity, View} from 'react-native';
-import SearchIcon from '../../icons/Search.tsx';
-import CloseIcon from '../../icons/Close.tsx';
-import styles from './styles.ts';
-import {colors} from '../../colors';
+import SearchIcon from '../../../icons/Search';
+import CloseIcon from '../../../icons/Close';
+import {colors} from '../../../colors';
+import styles from './styles';
 
 interface HomeHeaderProps {
   search: string;

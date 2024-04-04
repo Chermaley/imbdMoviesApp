@@ -1,4 +1,4 @@
-export type MovieType = {
+export type MovieListItemType = {
   actors: string;
   aka: string;
   imdbId: string;

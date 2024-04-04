@@ -1,4 +1,4 @@
-export type ApiMovieType = {
+export type ApiMovieListItemType = {
   '#ACTORS': string;
   '#AKA': string;
   '#IMDB_ID': string;
@@ -13,5 +13,5 @@ export type ApiMovieType = {
 };
 
 export type MoviesResponseType = {
-  description: ApiMovieType[];
+  description: ApiMovieListItemType[];
 };
