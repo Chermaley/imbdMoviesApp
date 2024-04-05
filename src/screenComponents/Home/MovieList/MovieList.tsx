@@ -2,7 +2,7 @@ import React, {useCallback} from 'react';
 import {FlatList} from 'react-native';
 import {ListRenderItemInfo} from '@react-native/virtualized-lists/Lists/VirtualizedList';
 import MovieSkeleton from './MovieSkeleton';
-import {MovieListItemType} from "../../../api/models/MovieListItemType.ts";
+import {MovieListItemType} from "../../../api/models/MovieListItemType";
 import MovieCard from "../../../ui/MovieCard";
 import styles from './styles';
 

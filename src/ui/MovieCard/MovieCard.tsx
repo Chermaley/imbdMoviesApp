@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {ActivityIndicator, Image, Text, TouchableOpacity, View,} from 'react-native';
-import styles from './styles';
 import LinearGradient from 'react-native-linear-gradient';
+import styles from './styles';
 import {colors} from '../../colors';
 
 type MovieCardProps = {
@@ -12,6 +12,10 @@ type MovieCardProps = {
 
 const MovieCard: React.FC<MovieCardProps> = ({title, image, onPress}) => {
   const [imageLoaded, setImageLoaded] = useState(false);
+
+  const loadImageHandler = () => {    
+    setImageLoaded(true)
+  }
 
   return (
     <TouchableOpacity
@@ -24,20 +28,19 @@ const MovieCard: React.FC<MovieCardProps> = ({title, image, onPress}) => {
       />
       {image && (
         <>
-          {!imageLoaded ||
-            (!image && (
+          {!imageLoaded && image && (
               <View style={styles.loader}>
                 <ActivityIndicator size="large" color={colors.secondary} />
               </View>
-            ))}
+          )}
           <Image
             style={{
               ...styles.cardImage,
-              display: imageLoaded ? 'flex' : 'none',
+              opacity: imageLoaded ? 1 : 0,
             }}
             source={{uri: image}}
             resizeMode={'cover'}
-            onLoad={() => setImageLoaded(true)}
+            onLoad={loadImageHandler}
           />
         </>
       )}

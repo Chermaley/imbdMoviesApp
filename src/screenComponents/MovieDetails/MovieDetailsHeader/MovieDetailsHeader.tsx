@@ -1,8 +1,8 @@
 import React from 'react';
-import {Image, Text, View} from 'react-native';
+import { Image, Text, TouchableOpacity, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Back from '../../../icons/Back';
-import {colors} from '../../../colors';
+import { colors } from '../../../colors';
 import styles from './styles';
 
 type MovieHeaderProps = {
@@ -11,22 +11,25 @@ type MovieHeaderProps = {
   onGoBack: () => void;
 };
 
-const MovieHeader = ({poster, title, onGoBack}: MovieHeaderProps) => {
+const MovieHeader = ({ poster, title, onGoBack }: MovieHeaderProps) => {
   return (
     <View style={styles.imageWrapper}>
       <LinearGradient
         colors={['black', 'transparent', 'transparent', 'transparent']}
         style={styles.gradient}
       />
-      <Back
-        width={32}
-        height={32}
-        style={styles.backIcon}
-        color={colors.white}
-        onPress={onGoBack}
-      />
+      <TouchableOpacity           style={styles.backIcon}
+ hitSlop={{ top: 24, left: 24, right: 24, bottom: 24 }}         onPress={onGoBack}>
+        <Back
+          width={32}
+          height={32}
+          color={colors.white}
+          onPress={onGoBack}
+        />
+      </TouchableOpacity>
+
       <Text style={styles.title}>{title}</Text>
-      <Image source={{uri: poster}} style={styles.image} />
+      <Image source={{ uri: poster }} style={styles.image} />
       <LinearGradient
         colors={['transparent', 'transparent', 'transparent', 'black']}
         style={styles.gradient}

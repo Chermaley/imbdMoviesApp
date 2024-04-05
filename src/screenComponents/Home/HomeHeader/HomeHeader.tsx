@@ -52,7 +52,7 @@ const HomeHeader = ({search, onSearchChange}: HomeHeaderProps) => {
       </View>
       <View style={[styles.headerRow, isSearching && styles.hiddenClass]}>
         <Text style={styles.headerTitle}>Movies</Text>
-        <TouchableOpacity onPress={pressSearchIconHandler}>
+        <TouchableOpacity onPress={pressSearchIconHandler}           hitSlop={{top: 24, left: 24, right: 24, bottom: 24}}>
           <SearchIcon color="white" />
         </TouchableOpacity>
       </View>

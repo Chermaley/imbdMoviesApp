@@ -17,7 +17,7 @@ export default StyleSheet.create({
   backIcon: {
     position: 'absolute',
     top: 24,
-    left: 16,
+    left: 14,
     right: 0,
     zIndex: 3,
   },
