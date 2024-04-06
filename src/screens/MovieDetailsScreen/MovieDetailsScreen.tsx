@@ -1,10 +1,10 @@
 import React from 'react';
 import {RefreshControl, ScrollView, View} from 'react-native';
-import MovieHeader from '../../screenComponents/MovieDetails/MovieDetailsHeader';
+import MovieHeader from '../../screen-components/MovieDetails/MovieDetailsHeader';
 import useMovie from '../../hooks/api/useMovie';
-import styles from './styles';
-import MovieDetailsContent from '../../screenComponents/MovieDetails/MovieDetailsContent';
+import MovieDetailsContent from '../../screen-components/MovieDetails/MovieDetailsContent';
 import ErrorView from '../../components/ErrorView';
+import styles from './styles';
 
 interface MovieDetailsScreenProps {
   imbdId: string;

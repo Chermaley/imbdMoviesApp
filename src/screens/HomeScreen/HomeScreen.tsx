@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {View} from 'react-native';
 import useMovies from '../../hooks/api/useMovies';
-import HomeHeader from '../../screenComponents/Home/HomeHeader';
-import MovieList from '../../screenComponents/Home/MovieList';
+import HomeHeader from '../../screen-components/Home/HomeHeader';
+import MovieList from '../../screen-components/Home/MovieList';
 import styles from './styles';
 import ErrorView from '../../components/ErrorView';
 
