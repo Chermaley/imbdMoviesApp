@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {colors} from "../../colors";
+import {colors} from '../../colors';
 
 export default StyleSheet.create({
   infoItem: {
@@ -13,5 +13,5 @@ export default StyleSheet.create({
     color: colors.white,
     fontSize: 16,
     lineHeight: 24,
-  }
+  },
 });
