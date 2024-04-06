@@ -1,7 +1,6 @@
-import {useAppSelector} from '../useAppSelector';
 import {useCallback, useEffect} from 'react';
 import {getMovie} from '../../store/moviesSlice.ts';
-import {useAppDispatch} from '../useAppDispatch.ts';
+import {useAppDispatch, useAppSelector} from '../../hooks';
 
 export default function useMovie(id: string) {
   const dispatch = useAppDispatch();

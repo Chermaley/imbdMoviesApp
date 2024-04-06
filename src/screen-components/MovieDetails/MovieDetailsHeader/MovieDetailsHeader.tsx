@@ -1,7 +1,7 @@
 import React from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import Back from '../../../images/icons/Back';
+import {BackIcon} from '../../../images/icons';
 import {colors} from '../../../colors';
 import styles from './styles';
 
@@ -27,7 +27,7 @@ const MovieHeader = ({
           style={styles.backIcon}
           hitSlop={{top: 24, left: 24, right: 24, bottom: 24}}
           onPress={onGoBack}>
-          <Back
+          <BackIcon
             width={32}
             height={32}
             color={colors.white}
@@ -48,7 +48,12 @@ const MovieHeader = ({
         style={styles.backIcon}
         hitSlop={{top: 24, left: 24, right: 24, bottom: 24}}
         onPress={onGoBack}>
-        <Back width={32} height={32} color={colors.white} onPress={onGoBack} />
+        <BackIcon
+          width={32}
+          height={32}
+          color={colors.white}
+          onPress={onGoBack}
+        />
       </TouchableOpacity>
       <Text style={styles.title} ellipsizeMode="tail" numberOfLines={3}>
         {title}

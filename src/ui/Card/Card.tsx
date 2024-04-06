@@ -7,8 +7,8 @@ import {
   View,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import styles from './styles';
 import {colors} from '../../colors';
+import styles from './styles';
 
 type CardProps = {
   title?: string;

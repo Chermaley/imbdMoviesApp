@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import {Text, View} from 'react-native';
-import styles from './styles';
-import StarIcon from '../../../images/icons/Star.tsx';
+import {StarIcon} from '../../../images/icons';
 import {colors} from '../../../colors';
 import {decode} from 'html-entities';
+import styles from './styles';
 
 type ReviewProps = {
   author: string;
@@ -33,7 +33,7 @@ const Review: React.FC<ReviewProps> = ({author, dateCreated, rating, body}) => {
       </View>
       <Text style={styles.body}>{bodyText}</Text>
       <Text style={styles.toggle} onPress={toggleFullReview}>
-        {fullReview ? 'Show less' : 'Show more'}
+        Show {fullReview ? 'less' : 'more'}
       </Text>
       <Text style={styles.date}>{dateCreated}</Text>
     </View>

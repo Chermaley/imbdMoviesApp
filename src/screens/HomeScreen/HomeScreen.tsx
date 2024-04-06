@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import {View} from 'react-native';
-import useMovies from '../../hooks/api/useMovies';
+import {useMovies} from '../../hooks';
 import HomeHeader from '../../screen-components/Home/HomeHeader';
 import MovieList from '../../screen-components/Home/MovieList';
-import styles from './styles';
 import ErrorView from '../../ui/ErrorView';
+import styles from './styles';
 
 type HomeScreenProps = {
   goToMovieDetails: (imbdId: string) => void;

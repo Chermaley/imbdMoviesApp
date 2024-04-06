@@ -1,6 +1,5 @@
 import {axiosInstance} from './axiosInstanse';
-import translateMovieListItem from './translaters/translateMovieListItem.ts';
-import translateMovie from './translaters/translateMovie.ts';
+import {translateMovie, translateMovieListItem} from './translaters';
 import {MovieListItemType} from './models/MovieListItemType.ts';
 import {MoviesResponseType} from './raw/ApiMovieListItem.ts';
 import {ApiMovieType} from './raw/ApiMovieType.ts';

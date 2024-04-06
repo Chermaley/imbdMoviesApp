@@ -1,7 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {Keyboard, Text, TextInput, TouchableOpacity, View} from 'react-native';
-import SearchIcon from '../../../images/icons/Search';
-import CloseIcon from '../../../images/icons/Close';
+import {CloseIcon, SearchIcon} from '../../../images/icons';
 import {colors} from '../../../colors';
 import styles from './styles';
 

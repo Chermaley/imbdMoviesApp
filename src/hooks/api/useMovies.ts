@@ -1,8 +1,6 @@
 import {useCallback, useEffect} from 'react';
 import {getMovies} from '../../store/moviesSlice';
-import {useAppSelector} from '../useAppSelector';
-import {useAppDispatch} from '../useAppDispatch';
-import {useDebounce} from '../useDebounce';
+import {useAppDispatch, useAppSelector, useDebounce} from '../../hooks';
 
 export default function useMovies(search: string) {
   const dispatch = useAppDispatch();
