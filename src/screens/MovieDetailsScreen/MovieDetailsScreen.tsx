@@ -3,7 +3,7 @@ import {RefreshControl, ScrollView, View} from 'react-native';
 import MovieHeader from '../../screen-components/MovieDetails/MovieDetailsHeader';
 import useMovie from '../../hooks/api/useMovie';
 import MovieDetailsContent from '../../screen-components/MovieDetails/MovieDetailsContent';
-import ErrorView from '../../components/ErrorView';
+import ErrorView from '../../ui/ErrorView';
 import styles from './styles';
 
 interface MovieDetailsScreenProps {

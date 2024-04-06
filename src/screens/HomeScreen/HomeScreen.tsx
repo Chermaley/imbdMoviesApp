@@ -4,7 +4,7 @@ import useMovies from '../../hooks/api/useMovies';
 import HomeHeader from '../../screen-components/Home/HomeHeader';
 import MovieList from '../../screen-components/Home/MovieList';
 import styles from './styles';
-import ErrorView from '../../components/ErrorView';
+import ErrorView from '../../ui/ErrorView';
 
 type HomeScreenProps = {
   goToMovieDetails: (imbdId: string) => void;

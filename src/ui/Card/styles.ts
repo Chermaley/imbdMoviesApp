@@ -48,4 +48,7 @@ export default StyleSheet.create({
     color: 'white',
     fontSize: 24,
   },
+  hidden: {
+    opacity: 0,
+  },
 });

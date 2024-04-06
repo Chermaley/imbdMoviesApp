@@ -45,10 +45,7 @@ const Card: React.FC<CardProps> = ({title, image, onPress}) => {
             </View>
           )}
           <Image
-            style={{
-              ...styles.cardImage,
-              opacity: imageLoaded ? 1 : 0,
-            }}
+            style={[styles.cardImage, !imageLoaded && styles.hidden]}
             source={{uri: image}}
             resizeMode="cover"
             onLoad={loadImageHandler}

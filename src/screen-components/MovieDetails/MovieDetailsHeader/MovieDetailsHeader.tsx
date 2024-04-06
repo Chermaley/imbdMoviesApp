@@ -53,7 +53,7 @@ const MovieHeader = ({
       <Text style={styles.title} ellipsizeMode="tail" numberOfLines={3}>
         {title}
       </Text>
-      <Image source={{uri: poster ?? ''}} style={styles.image} />
+      {poster && <Image source={{uri: poster}} style={styles.image} />}
       <LinearGradient
         colors={['transparent', 'transparent', 'transparent', 'black']}
         style={styles.gradient}

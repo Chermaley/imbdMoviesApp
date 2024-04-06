@@ -1,10 +1,10 @@
 import React from 'react';
 import {Text, View} from 'react-native';
-import styles from './styles';
 import InfoList from '../../../ui/InfoList';
 import {ReviewType} from '../../../api/models/MovieType.ts';
 import MovieDetailsReview from '../MovieDetailsReview';
 import {decode} from 'html-entities';
+import styles from './styles';
 
 type MovieHeaderProps = {
   description?: string;
