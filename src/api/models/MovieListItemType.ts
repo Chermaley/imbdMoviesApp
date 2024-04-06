@@ -6,7 +6,7 @@ export type MovieListItemType = {
   imdbUrl: string;
   imgPoster: string;
   rank: number;
-  title: string;
+  title?: string;
   year: number;
   photoHeight: number;
   photoWidth: number;

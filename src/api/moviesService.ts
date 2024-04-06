@@ -29,7 +29,6 @@ export const moviesService = {
     const response = await axiosInstance.get(`/?tt=${id}`, {
       transformResponse: data => {
         const parsedData = JSON.parse(data) as ApiMovieType;
-        console.log(parsedData)
         return translateMovie(parsedData);
       },
     });

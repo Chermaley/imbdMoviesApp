@@ -1,21 +1,27 @@
 import React, {useState} from 'react';
-import {ActivityIndicator, Image, Text, TouchableOpacity, View,} from 'react-native';
+import {
+  ActivityIndicator,
+  Image,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import styles from './styles';
 import {colors} from '../../colors';
 
-type MovieCardProps = {
+type CardProps = {
   title: string;
   image: string;
   onPress: () => void;
 };
 
-const MovieCard: React.FC<MovieCardProps> = ({title, image, onPress}) => {
+const Card: React.FC<CardProps> = ({title, image, onPress}) => {
   const [imageLoaded, setImageLoaded] = useState(false);
 
-  const loadImageHandler = () => {    
-    setImageLoaded(true)
-  }
+  const loadImageHandler = () => {
+    setImageLoaded(true);
+  };
 
   return (
     <TouchableOpacity
@@ -23,15 +29,20 @@ const MovieCard: React.FC<MovieCardProps> = ({title, image, onPress}) => {
       onPress={onPress}
       activeOpacity={0.95}>
       <LinearGradient
-        colors={['transparent','transparent','transparent', 'black']}
+        colors={['transparent', 'transparent', 'transparent', 'black']}
         style={styles.gradient}
       />
+      {!image && (
+        <View style={styles.noImage}>
+          <Text style={styles.noImageText}>No image</Text>
+        </View>
+      )}
       {image && (
         <>
           {!imageLoaded && image && (
-              <View style={styles.loader}>
-                <ActivityIndicator size="large" color={colors.secondary} />
-              </View>
+            <View style={styles.loader}>
+              <ActivityIndicator size="large" color={colors.secondary} />
+            </View>
           )}
           <Image
             style={{
@@ -39,7 +50,7 @@ const MovieCard: React.FC<MovieCardProps> = ({title, image, onPress}) => {
               opacity: imageLoaded ? 1 : 0,
             }}
             source={{uri: image}}
-            resizeMode={'cover'}
+            resizeMode="cover"
             onLoad={loadImageHandler}
           />
         </>
@@ -51,4 +62,4 @@ const MovieCard: React.FC<MovieCardProps> = ({title, image, onPress}) => {
   );
 };
 
-export default MovieCard;
+export default Card;

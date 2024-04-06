@@ -38,5 +38,5 @@ export default StyleSheet.create({
   },
   hiddenClass: {
     display: 'none',
-  }
+  },
 });

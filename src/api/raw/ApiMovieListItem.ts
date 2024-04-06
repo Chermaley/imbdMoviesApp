@@ -6,7 +6,7 @@ export type ApiMovieListItemType = {
   '#IMDB_URL': string;
   '#IMG_POSTER': string;
   '#RANK': number;
-  '#TITLE': string;
+  '#TITLE'?: string;
   '#YEAR': number;
   photo_height: number;
   photo_width: number;

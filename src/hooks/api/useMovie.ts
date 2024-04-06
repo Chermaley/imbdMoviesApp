@@ -16,7 +16,7 @@ export default function useMovie(id: string) {
 
   useEffect(() => {
     getMovieHandler();
-  }, []);
+  }, [getMovieHandler]);
 
   return {movie, movieLoading, movieError, getMovieHandler};
 }

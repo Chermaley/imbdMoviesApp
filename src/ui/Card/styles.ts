@@ -1,13 +1,17 @@
 import {StyleSheet} from 'react-native';
+import {colors} from '../../colors';
 
 export default StyleSheet.create({
   card: {
     flexBasis: '48%',
     height: 200,
     borderRadius: 10,
+    overflow: 'hidden',
   },
   loader: {
-    flex: 1,
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -34,12 +38,14 @@ export default StyleSheet.create({
     zIndex: 2,
     maxWidth: '80%',
   },
-  cardRating: {
-    fontSize: 16,
+  noImage: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: colors.bgColor,
+  },
+  noImageText: {
     color: 'white',
-    position: 'absolute',
-    bottom: 10,
-    right: 10,
-    zIndex: 2,
+    fontSize: 24,
   },
 });

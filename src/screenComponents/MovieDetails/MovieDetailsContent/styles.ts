@@ -3,8 +3,9 @@ import {colors} from '../../../colors';
 
 export default StyleSheet.create({
   content: {
-    padding: 16,
-    gap: 10
+    gap: 10,
+    paddingLeft: 16,
+    paddingTop: 16,
   },
   sectionTitle: {
     color: colors.white,
@@ -16,5 +17,9 @@ export default StyleSheet.create({
     color: colors.white,
     fontSize: 16,
     lineHeight: 24,
+    paddingRight: 16,
+  },
+  review: {
+    paddingRight: 16,
   },
 });

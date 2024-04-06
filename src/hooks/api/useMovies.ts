@@ -1,4 +1,4 @@
-import {useEffect} from 'react';
+import {useCallback, useEffect} from 'react';
 import {getMovies} from '../../store/moviesSlice';
 import {useAppSelector} from '../useAppSelector';
 import {useAppDispatch} from '../useAppDispatch';
@@ -12,9 +12,13 @@ export default function useMovies(search: string) {
   const moviesLoading = useAppSelector(state => state.movies.movieListLoading);
   const moviesError = useAppSelector(state => state.movies.movieListError);
 
-  useEffect(() => {
+  const getMoviesHandler = useCallback(() => {
     dispatch(getMovies({search: debouncedSearchValue}));
   }, [debouncedSearchValue, dispatch]);
 
-  return {movies, moviesLoading, moviesError};
+  useEffect(() => {
+    getMoviesHandler();
+  }, [getMoviesHandler]);
+
+  return {movies, moviesLoading, moviesError, getMoviesHandler};
 }

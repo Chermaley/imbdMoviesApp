@@ -2,24 +2,16 @@ import {StyleSheet} from 'react-native';
 import {colors} from '../../../colors';
 
 export default StyleSheet.create({
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  topRow: {
-    alignItems: 'center',
-    flexDirection: 'row',
-    paddingTop: 16,
-    paddingHorizontal: 16,
-    gap: 20,
+  headerWrapper: {
+    flex: 1,
+    height: 64,
   },
   backIcon: {
     position: 'absolute',
     top: 24,
     left: 14,
     right: 0,
-    zIndex: 3,
+    zIndex: 12,
   },
   title: {
     fontSize: 32,
@@ -29,6 +21,7 @@ export default StyleSheet.create({
     bottom: 20,
     left: 16,
     zIndex: 3,
+    maxWidth: '80%',
   },
   imageWrapper: {
     width: '100%',
@@ -42,6 +35,6 @@ export default StyleSheet.create({
     position: 'absolute',
     width: '100%',
     height: '100%',
-    zIndex: 2
+    zIndex: 2,
   },
 });

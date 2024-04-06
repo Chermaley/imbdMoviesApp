@@ -5,15 +5,26 @@ export default StyleSheet.create({
   wrapper: {
     backgroundColor: colors.bgSecondary,
     flex: 1,
-  },
-  center: {
     justifyContent: 'center',
     alignItems: 'center',
-    flex: 1,
   },
-  errorText: {
-    fontSize: 20,
+  img: {
+    width: 150,
+    height: 150,
+    marginBottom: 20,
+  },
+  message: {
+    color: colors.white,
+    marginBottom: 20,
+    fontSize: 17,
     textAlign: 'center',
+  },
+  retry: {
+    color: colors.white,
     fontWeight: 'bold',
+    fontSize: 24,
+  },
+  back: {
+    color: colors.white,
   },
 });

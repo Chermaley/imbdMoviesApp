@@ -1,10 +1,10 @@
-import React, {useCallback} from 'react';
+import React from 'react';
 import {FlatList, View} from 'react-native';
 import styles from './styles';
 
 const MovieSkeleton = () => {
   const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
-  const renderItem = () => <View style={styles.skeleton} />
+  const renderItem = () => <View style={styles.skeleton} />;
   return (
     <FlatList
       columnWrapperStyle={styles.columnWrapper}

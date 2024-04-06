@@ -1,7 +1,7 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
 import {moviesService} from '../api/moviesService';
 import {MovieListItemType} from '../api/models/MovieListItemType.ts';
-import {MovieType} from "../api/models/MovieType.ts";
+import {MovieType} from '../api/models/MovieType.ts';
 
 export interface MoviesSlice {
   movieList: MovieListItemType[];
@@ -71,7 +71,9 @@ export const moviesSlice = createSlice({
         }
       })
       .addCase(getMovie.pending, state => {
+        state.movie = null;
         state.movieLoading = true;
+        state.movieError = '';
       })
       .addCase(getMovie.rejected, (state, action) => {
         state.movieLoading = false;

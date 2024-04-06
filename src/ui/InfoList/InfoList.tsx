@@ -1,7 +1,7 @@
 import React from 'react';
 import {FlatList, Text, View} from 'react-native';
 import styles from './styles';
-import {ListRenderItemInfo} from "@react-native/virtualized-lists/Lists/VirtualizedList";
+import {ListRenderItemInfo} from '@react-native/virtualized-lists/Lists/VirtualizedList';
 
 type InfoListProps = {
   data: string[];

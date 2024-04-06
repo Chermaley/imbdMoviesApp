@@ -1,7 +1,7 @@
-import React, {useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {Keyboard, Text, TextInput, TouchableOpacity, View} from 'react-native';
-import SearchIcon from '../../../icons/Search';
-import CloseIcon from '../../../icons/Close';
+import SearchIcon from '../../../images/icons/Search';
+import CloseIcon from '../../../images/icons/Close';
 import {colors} from '../../../colors';
 import styles from './styles';
 
@@ -14,9 +14,14 @@ const HomeHeader = ({search, onSearchChange}: HomeHeaderProps) => {
   const searchInputRef = useRef<TextInput>(null);
   const [isSearching, setIsSearching] = useState(false);
 
+  useEffect(() => {
+    if (isSearching) {
+      searchInputRef.current?.focus();
+    }
+  }, [isSearching]);
+
   const pressSearchIconHandler = () => {
     setIsSearching(true);
-    searchInputRef.current?.focus();
   };
 
   const pressCloseSearchIconHandler = () => {
@@ -52,7 +57,9 @@ const HomeHeader = ({search, onSearchChange}: HomeHeaderProps) => {
       </View>
       <View style={[styles.headerRow, isSearching && styles.hiddenClass]}>
         <Text style={styles.headerTitle}>Movies</Text>
-        <TouchableOpacity onPress={pressSearchIconHandler}           hitSlop={{top: 24, left: 24, right: 24, bottom: 24}}>
+        <TouchableOpacity
+          onPress={pressSearchIconHandler}
+          hitSlop={{top: 24, left: 24, right: 24, bottom: 24}}>
           <SearchIcon color="white" />
         </TouchableOpacity>
       </View>

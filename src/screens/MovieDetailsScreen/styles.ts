@@ -6,5 +6,7 @@ export default StyleSheet.create({
     backgroundColor: colors.bgSecondary,
     flex: 1,
   },
-
+  errorViewWrapper: {
+    marginTop: 120,
+  },
 });
