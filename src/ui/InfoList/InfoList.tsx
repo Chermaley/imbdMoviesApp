@@ -13,6 +13,7 @@ const InfoList: React.FC<InfoListProps> = ({data}) => {
       <Text style={styles.infoItemText}>{item}</Text>
     </View>
   );
+
   return (
     <FlatList
       data={data}

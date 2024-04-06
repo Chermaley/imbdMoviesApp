@@ -22,13 +22,13 @@ const MovieDetailsContent = ({
 }: MovieHeaderProps) => {
   return (
     <View style={styles.content}>
-      {description && (
+      {!!description && (
         <View>
           <Text style={styles.sectionTitle}>Description</Text>
           <Text style={styles.description}>{decode(description)}</Text>
         </View>
       )}
-      {actors && (
+      {!!actors && (
         <View>
           <Text style={styles.sectionTitle}>Actors</Text>
           <InfoList data={actors} />
@@ -40,7 +40,7 @@ const MovieDetailsContent = ({
           <InfoList data={keywords.split(',')} />
         </View>
       )}
-      {review && (
+      {!!review && (
         <View style={styles.review}>
           <Text style={styles.sectionTitle}>Review</Text>
           <MovieDetailsReview

@@ -11,7 +11,7 @@ import styles from './styles';
 import {colors} from '../../colors';
 
 type CardProps = {
-  title: string;
+  title?: string;
   image: string;
   onPress: () => void;
 };

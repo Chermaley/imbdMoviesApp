@@ -16,7 +16,7 @@ const Review: React.FC<ReviewProps> = ({author, dateCreated, rating, body}) => {
   const [fullReview, setFullReview] = useState(false);
   const toggleFullReview = () => setFullReview(!fullReview);
 
-  const bodyText = fullReview ? body : `${body.slice(0, 210)}...`;
+  const bodyText = decode(fullReview ? body : `${body.slice(0, 210)}...`);
 
   return (
     <View style={styles.wrapper}>
@@ -31,7 +31,7 @@ const Review: React.FC<ReviewProps> = ({author, dateCreated, rating, body}) => {
           </View>
         )}
       </View>
-      <Text style={styles.body}>{decode(bodyText)}</Text>
+      <Text style={styles.body}>{bodyText}</Text>
       <Text style={styles.toggle} onPress={toggleFullReview}>
         {fullReview ? 'Show less' : 'Show more'}
       </Text>
